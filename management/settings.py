@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-import django-heroku
+#import django-heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -111,4 +111,4 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
