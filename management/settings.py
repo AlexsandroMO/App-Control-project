@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+
 #import django-heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'documentation',
-    #'crispy_forms',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -103,10 +104,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 MEDIA_URL = '/media/'
 
-#CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/accounts/login'

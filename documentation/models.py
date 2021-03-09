@@ -1,4 +1,4 @@
-'''from django.db import models
+from django.db import models
 from django.contrib.auth import get_user_model
 
 
@@ -162,10 +162,6 @@ class ProjectValue(models.Model): #Upload de arquivos
 
     def __str__(self):
         return str(self.cost_by_hh)
-
-'''
-
-
 
 
 '''class Upload_doc(models.Model): #Upload de arquivos

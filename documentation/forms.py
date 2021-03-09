@@ -1,4 +1,4 @@
-'''from django import forms
+from django import forms
 from .models import  MyProject, Subject, PageT, DocT, Pageformat, DocumentStandard, Employee, StatusDoc, Action, Cotation, LdProj
 
 
@@ -76,4 +76,4 @@ class LdProjForm(forms.ModelForm):
 
     class Meta:
         model = LdProj
-        fields = ('proj_name', 'subject_name', 'doc_name_pattern','doc_name', 'cod_doc_type','page_type','format_doc','status','responsible','elab','verif','aprov','emiss','date')'''
+        fields = ('proj_name', 'subject_name', 'doc_name_pattern','doc_name', 'cod_doc_type','page_type','format_doc','status','responsible','elab','verif','aprov','emiss','date')

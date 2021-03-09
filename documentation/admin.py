@@ -1,4 +1,4 @@
-'''from django.contrib import admin
+from django.contrib import admin
 from . models import MyProject, Subject, DocumentStandard, Action, StatusDoc, Employee, Cotation, Upload, ProjectValue, PageT, DocT, Pageformat, LdProj
 
 
@@ -69,4 +69,4 @@ admin.site.register(Upload)
 admin.site.register(ProjectValue, ProjectValueAdmin)
 admin.site.register(PageT, PageTAdmin)
 admin.site.register(DocT, DocTAdmin)
-admin.site.register(Pageformat, PageformatAdmin)'''
+admin.site.register(Pageformat, PageformatAdmin)
