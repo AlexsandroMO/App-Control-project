@@ -89,6 +89,8 @@ def index2(request):
 
     return render(request, 'documentation/index2.html', {'MyProjects': MyProjects, 'DocumentStandards': DocumentStandards, 'Subjects':Subjects,'Actions': Actions, 'StatusDocs':StatusDocs, 'Employees':Employees, 'colaborador':colaborador, 'photo_colab':photo_colab, 'proj':proj})
 
+
+
 @login_required
 def projectlist(request):
 

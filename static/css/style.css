@@ -1,4 +1,7 @@
 
+#card-div{
+    background-color: rgb(227, 229, 243);
+}
  
 .card-table{
     padding-bottom: 30px;
@@ -12,6 +15,10 @@
  }
 
 /* SORTABLE TABLES */
+.table td,.table th {
+    background-color: #fafafa;
+}
+
 
 table{
     border: 0px solid rgb(31, 28, 28);
@@ -36,6 +43,10 @@ table{
 
 }
 
+
+#test-1{
+    color:rgb(231, 21, 14)
+}
 
 #col-id{
     width: 15px;
