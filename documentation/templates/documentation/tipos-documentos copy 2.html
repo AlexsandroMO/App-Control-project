@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Documentos{% endblock %}
+{% block content %}
+
+<section class="content">
+  <div class="container-fluid" >
+        <div class="row">
+          <div class="col-12" >
+            <div class="card" >
+              <div class="card-header" >
+                <h3 class="card-title">Modelo de Documentação Técnica</h3>
+              </div>
+   
+              <div class="card-header">
+                  <div class="well hidden well-sm clearfix" data-target="tabela1">
+                      <div class="actions">
+                          <div class="btn-group">
+                              <button type="button" class="btn btn-default">Duplicar</button>
+                              <a href="#" class="btn btn-default">Relatorio</a>
+                              <a href="#" class="btn btn-default">Arquivar</a>
+                          </div>
+                          <button type="button" class="btn btn-danger">Excluir</button>
+                      </div>
+                  </div>
+
+              <div class="table-responsive">
+                  <div class="card-body">
+                  <table class="table ls-table" id="tabela1">
+                      <table id="example2" class="table table-bordered table-striped dataTable dtr-inline">
+                          <thead>
+                            <tr>
+                              <th id="col-id">
+                                <div class="input-group-prepend">
+                                  <!-- <span class="input-group-text"> -->
+                                    <input class="marcar" type="checkbox" name="action" value="All"  onclick="marcarTodos(this.checked);">
+                                  <!-- </span> -->
+                                </div>
+                              <div class="clear"></div>
+                              </th>
+                              <th id="col-name-doc">NOME DO DOCUMENTO</th>
+                              <th id="col-type-doc">TIPO DE DOCUMENTO</th>
+                              <th id="col-type-arq">TIPO DE ARQUIVO</th>
+                              <th id="col-model-page">MODELO DE FOLHA</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% csrf_token %}
+                            {% for doc in Document %}
+                            <tr>
+                              <td> 
+                                <div class="input-group-prepend">
+                                  <!-- <span class="input-group-text"> -->
+                                    <input class="marcar" type="checkbox" name="action" value="{{doc.id}}">
+                                  <!-- </span> -->
+                                </div>
+                              </td> 
+                              <th class="field-proj_name nowrap"><a href="#">{{doc.documment_name}}</a></th>
+                              <td>{{doc.doc_type}}</td>
+                              <td>{{doc.format_doc}}</td>
+                              <td>{{doc.doc_type_page}}</td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+</section>
+
+
+{% endblock %}
