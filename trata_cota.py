@@ -32,7 +32,7 @@ def cria_orc_all(GET, DocumentStandards):
     
     for i in DocumentStandards:
         #print('>>>>>>',GET['proj'][0], GET['sub'][0], i.id, i.documment_name, i.doc_type_id,i.doc_type_page_id,i.format_doc_id,date_today)
-        cria_cota(int(GET['proj'][0]), int(GET['sub'][0]), i.id, i.documment_name, i.doc_type_id,i.doc_type_page_id,i.format_doc_id,date_today)
+        cria_cota(int(GET['proj_'][0]), int(GET['sub'][0]), i.id, i.documment_name, i.doc_type_id,i.doc_type_page_id,i.format_doc_id,date_today)
 
 
 def cria_orc_ind(GET):
@@ -71,7 +71,7 @@ def cria_orc_ind(GET):
         #print('>>form>>>>', readed['format_doc_id'])
         #print('>>>>date>>', date_today)
 
-        cria_cota(int(GET['proj'][0]), int(GET['sub'][0]), int(readed['id']),readed['documment_name'][0], int(readed['doc_type_id']),int(readed['doc_type_page_id']),int(readed['format_doc_id']),date_today)
+        cria_cota(int(GET['proj_'][0]), int(GET['sub'][0]), int(readed['id']),readed['documment_name'][0], int(readed['doc_type_id']),int(readed['doc_type_page_id']),int(readed['format_doc_id']),date_today)
         #print('>>>>date>>', date_today)
 
 

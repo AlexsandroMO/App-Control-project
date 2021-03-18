@@ -231,18 +231,27 @@ def Cotationlist_filter(request):
 
     GET = dict(request.GET)
 
+    print('>>>>>>',GET)
+
     DocumentStandards = DocumentStandard.objects.all()
     Employees = Employee.objects.all().order_by('-emp_name')
 
-    sub = int(GET['sub'][0])
-    proj = int(GET['proj'][0])
+    sub_proj = GET['sub'][0].split('|')
+    for a in sub_proj:
+        print('>>>>>>>>>>>>>', a)
+
+    print('>>>>>>>>>aaa>>>>', sub_proj[0])
+    print('>>>>>>>>>>bbb>>>', sub_proj[1])
+    
+    sub = int(sub_proj[0])
+    proj = int(sub_proj[1])
 
     MyProjects = MyProject.objects.filter(id=proj)
 
-    Subjects = Subject.objects.all().order_by('subject_name')
+    Subjects = Subject.objects.all()
     Subjects = Subjects.filter(id=sub)
 
-    Cotations = Cotation.objects.all().order_by('doc_name')  
+    Cotations = Cotation.objects.all()
     Cotations = Cotations.filter(proj_name__id=proj)
     Cotations = Cotations.filter(subject_name__id=sub)
 
@@ -263,8 +272,6 @@ def Cotationlist_filter(request):
 
     colaborador = ''
     photo_colab = ''
-
-    
 
     for a in Employees:
         if colab == a.user:
@@ -641,25 +648,24 @@ def Create_Cotation(request):
 
     DocumentStandards = DocumentStandard.objects.all()
 
-    if len(dict(request.GET)) == 3 and dict(request.GET)['proj'][0] != '0' and dict(request.GET)['sub'][0] != '0':
-        
-        GET = dict(request.GET)
+    GET = dict(request.GET)
+    print('>>>>>>>>',GET)
 
-        if dict(request.GET)['action'][0] == 'All':
+    if GET['proj_'][0] != '0' and GET['sub'][0] != '0':
+        
+        if GET['action'][0] == 'All':
+            print('Aqui....')
             LDcreate.cria_orc_all(GET,DocumentStandards)
 
             return redirect('/')
 
-        elif dict(request.GET)['action'][0] != 'All':
+        elif GET['action'][0] != 'All':
             LDcreate.cria_orc_ind(GET)
 
             return redirect('/')
 
-
     else:
         return redirect('/')
-
-
 
 def Create_LD(request):
 
